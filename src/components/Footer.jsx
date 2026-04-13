@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,7 +31,7 @@ const Footer = () => {
           <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-1 flex flex-col space-y-4">
             <div className="flex flex-row items-center gap-3 lg:flex-col lg:items-start lg:gap-0">
               <img
-                src="/logo.png"
+                src={logo}
                 alt="Sunshine Real Estate"
                 className="h-12 w-auto object-contain"
               />
@@ -84,7 +85,7 @@ const Footer = () => {
                 <div className="p-2 bg-[#D4AF37]/10 rounded-lg group-hover:bg-[#D4AF37] transition-colors flex-shrink-0">
                   <Phone size={15} className="text-[#D4AF37] group-hover:text-black" />
                 </div>
-                <span className="text-gray-400 text-sm font-semibold">+254 700 000 000</span>
+                <span className="text-gray-400 text-sm font-semibold">+254 718 954 559</span>
               </div>
               <div className="flex items-start space-x-3 group cursor-pointer">
                 <div className="p-2 bg-[#D4AF37]/10 rounded-lg group-hover:bg-[#D4AF37] transition-colors flex-shrink-0">

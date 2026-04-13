@@ -11,7 +11,7 @@ export default function App() {
     <div className="min-h-screen">
       <Navbar />
       <main className="pt-20"> {/* This pushes the content down so the navbar doesn't cover it */}
-      <Hero />
+      <Hero id='home' />
       {/* Other components */}
     </main>
       <Properties />

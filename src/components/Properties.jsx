@@ -63,7 +63,7 @@ const PropertyLanding = () => {
     <main className="font-poppins select-none mb-5 mt-1">
       
       {/* 1. OUR SERVICES SECTION */}
-      <section className="bg-[#FAF9F6] py-20 px-6 lg:px-16">
+      <section id="services" className="bg-[#FAF9F6] py-20 px-6 lg:px-16 scroll-mt-10">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-2 text-[#D4AF37] font-bold text-sm tracking-widest uppercase mb-2">
             <div className="h-[1px] w-8 bg-[#D4AF37]"></div>
@@ -90,7 +90,7 @@ const PropertyLanding = () => {
       </section>
 
       {/* 2. FEATURED LISTINGS SECTION */}
-      <section className="bg-white py-20 px-6 lg:px-16">
+      <section id="properties" className="bg-white py-20 px-6 lg:px-16 scroll-mt-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 space-y-4 md:space-y-0">
           <div>
             <div className="flex items-center space-x-2 text-[#D4AF37] font-bold text-sm tracking-widest uppercase mb-2">
@@ -172,7 +172,7 @@ const PropertyLanding = () => {
       </section>
 
       {/* 4. READY TO FIND (CTA) SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#8B6E1A] via-[#D4AF37] to-[#E5C76B] py-10 px-6 lg:px-16">
+      <section id="contact" className="relative overflow-hidden bg-gradient-to-r from-[#8B6E1A] via-[#D4AF37] to-[#E5C76B] py-10 px-6 lg:px-16">
         {/* City Skyline Overlay */}
         <div 
           className="absolute right-0 bottom-0 w-full h-full opacity-15 pointer-events-none"

@@ -10,7 +10,7 @@ const WhatsAppIcon = () => (
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] w-full flex items-center overflow-hidden font-poppins">
+    <section  id="home" className="relative min-h-[90vh] w-full flex items-center overflow-hidden font-poppins scroll-mt-24">
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80')` }}
