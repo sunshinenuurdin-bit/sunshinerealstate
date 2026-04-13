@@ -1,0 +1,97 @@
+import React, { useState } from 'react';
+import { Phone, Menu, X } from 'lucide-react';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null); 
+
+  const navLinks = [
+    { name: 'Home', href: '#' },
+    { name: 'Properties', href: '#' },
+    { name: 'Services', href: '#' },
+    { name: 'About Us', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'Contact Us', href: '#' },
+  ];
+
+  return (
+    // "fixed top-0 left-0 w-full" makes it stay at the top while scrolling
+    <nav className="fixed top-0 left-0 w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800 font-poppins z-[100]">
+      <div className="flex items-center justify-between px-6 py-3 lg:px-12">
+        
+        {/* --- REAL LOGO IMAGE SECTION --- */}
+        <div className="flex items-center cursor-pointer">
+          <img 
+            src="\src\assets\logo.png" // REPLACE THIS with your actual logo path (e.g., logo.png)
+            alt="Sunshine Real Estate Logo" 
+            className="h-12 w-auto md:h-14 object-contain" 
+          />
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex items-center space-x-8">
+          {navLinks.map((link, index) => (
+            <div key={link.name} className="relative py-2">
+              <button
+                onClick={() => setActiveIndex(index)}
+                className={`text-sm font-medium transition-colors duration-300 ${
+                  activeIndex === index ? 'text-[#D4AF37]' : 'text-white hover:text-[#D4AF37]'
+                }`}
+              >
+                {link.name}
+              </button>
+              {activeIndex === index && (
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#D4AF37]"></div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Action Area */}
+        <div className="flex items-center space-x-4">
+          <a
+            href="tel:+254700000000"
+            className="hidden sm:flex items-center bg-[#D4AF37] hover:bg-[#b8962f] text-black px-5 py-2.5 rounded-md font-bold transition-all"
+          >
+            <Phone className="w-4 h-4 mr-2" />
+            <span className="text-sm">+254 700 000 000</span>
+          </a>
+
+          {/* Mobile Toggle */}
+          <button 
+            className="lg:hidden text-white p-2 hover:text-[#D4AF37] transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`lg:hidden transition-all duration-300 ease-in-out ${
+        isOpen ? 'max-h-screen opacity-100 border-t border-gray-800' : 'max-h-0 opacity-0 overflow-hidden'
+      } bg-[#111]`}>
+        <div className="flex flex-col p-6 space-y-4">
+          {navLinks.map((link, index) => (
+            <button
+              key={link.name}
+              onClick={() => {
+                setActiveIndex(index);
+                setIsOpen(false); 
+              }}
+              className={`text-left text-lg font-medium py-2 border-l-4 pl-4 transition-all ${
+                activeIndex === index 
+                ? 'text-[#D4AF37] border-[#D4AF37] bg-[#D4AF37]/10' 
+                : 'text-white border-transparent'
+              }`}
+            >
+              {link.name}
+            </button>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
