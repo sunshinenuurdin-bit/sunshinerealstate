@@ -10,10 +10,10 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-20"> {/* This pushes the content down so the navbar doesn't cover it */}
+      {/* This pushes the content down so the navbar doesn't cover it */}
       <Hero id='home' />
       {/* Other components */}
-    </main>
+    
       <Properties />
       {/* <About />
       <Services />

@@ -60,7 +60,7 @@ const Navbar = () => {
             className="hidden sm:flex items-center bg-[#D4AF37] hover:bg-[#b8962f] text-black px-5 py-2.5 rounded-md font-bold transition-all"
           >
             <Phone className="w-4 h-4 mr-2" />
-            <span className="text-sm">+254 700 000 000</span>
+            <span className="text-sm">+254 718 957 599</span>
           </a>
 
           {/* Mobile Toggle */}

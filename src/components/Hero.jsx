@@ -10,14 +10,14 @@ const WhatsAppIcon = () => (
 
 const Hero = () => {
   return (
-    <section  id="home" className="relative min-h-[90vh] w-full flex items-center overflow-hidden font-poppins scroll-mt-24">
+    <section id="home" className="relative min-h-[90vh] w-full flex items-start lg:items-center overflow-hidden font-poppins">
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80')` }}
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
-      <div className="container mx-auto px-6 lg:px-16 relative z-20 pt-10">
+      <div className="container mx-auto px-6 lg:px-16 relative z-20 pt-28 lg:pt-32">
         <div className="max-w-3xl">
           <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
             Find Your <br />
@@ -37,7 +37,6 @@ const Hero = () => {
             Premium real estate services for buying, selling, and renting properties across Kenya.
           </p>
 
-          {/* Buttons — full width on mobile, auto on sm+ */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16">
             <button className="flex items-center justify-center bg-[#D4AF37] hover:bg-[#b8962f] text-black px-8 py-4 rounded-lg font-bold transition-all group w-full sm:w-auto">
               <Home className="w-5 h-5 mr-3" />
@@ -51,7 +50,6 @@ const Hero = () => {
             </button>
           </div>
 
-          {/* Features Bar — added pb-12 for bottom space */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-8 pb-12">
             <div className="flex items-center space-x-4">
               <div className="p-3 bg-white/5 rounded-lg">
