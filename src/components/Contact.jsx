@@ -10,11 +10,11 @@ const ContactUs = () => {
     },
     { 
       icon: <Mail className="w-6 h-6 text-[#D4AF37]" />, 
-      text: 'info@sunshinerealestate.net' 
+      text: 'info@sunshinereal-estate.com' 
     },
     { 
       icon: <Globe className="w-6 h-6 text-[#D4AF37]" />, 
-      text: 'www.sunshinerealestate.net' 
+      text: 'www.sunshinereal-estate.com' 
     },
     { 
       icon: <MapPin className="w-6 h-6 text-[#D4AF37]" />, 
