@@ -38,11 +38,13 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16">
-            <button className="flex items-center justify-center bg-[#D4AF37] hover:bg-[#b8962f] text-black px-8 py-4 rounded-lg font-bold transition-all group w-full sm:w-auto">
-              <Home className="w-5 h-5 mr-3" />
-              Explore Properties
-              <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <a href="#properties">
+              <button className="flex items-center justify-center bg-[#D4AF37] hover:bg-[#b8962f] text-black px-8 py-4 rounded-lg font-bold transition-all group w-full sm:w-auto">
+                <Home className="w-5 h-5 mr-3" />
+                Explore Properties
+                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </a>
 
             <button className="flex items-center justify-center border border-white/40 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-medium transition-all w-full sm:w-auto">
               <WhatsAppIcon />

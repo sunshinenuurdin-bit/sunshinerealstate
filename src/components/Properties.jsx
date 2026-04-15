@@ -5,7 +5,7 @@ import {
   Bath, Square, CarFront, MessageCircle, Phone,
   Search, User, Calendar, Handshake, Sun
 } from 'lucide-react';
-
+import OurProjects from './projects';
 const PropertyLanding = () => {
   // Data for Services
   const services = [
@@ -81,61 +81,68 @@ const PropertyLanding = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
               <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.desc}</p>
-              <button className="flex items-center text-sm font-bold hover:text-[#D4AF37] transition-colors">
-                Learn More <ArrowRight className="ml-2 w-4 h-4" />
-              </button>
+              
             </div>
           ))}
         </div>
       </section>
 
       {/* 2. FEATURED LISTINGS SECTION */}
-      <section id="properties" className="bg-white py-20 px-6 lg:px-16 scroll-mt-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 space-y-4 md:space-y-0">
-          <div>
-            <div className="flex items-center space-x-2 text-[#D4AF37] font-bold text-sm tracking-widest uppercase mb-2">
-              <div className="h-[1px] w-8 bg-[#D4AF37]"></div>
-              <span>Featured Properties</span>
-              <div className="h-[1px] w-8 bg-[#D4AF37]"></div>
+<section id="properties" className="bg-white py-20 px-6 lg:px-16 scroll-mt-10">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Centered Top Title */}
+    <div className="flex justify-center mb-4">
+      <div className="flex items-center space-x-2 text-[#D4AF37] font-bold text-sm tracking-widest uppercase">
+        <div className="h-[1px] w-8 bg-[#D4AF37]"></div>
+        <span>Our products</span>
+        <div className="h-[1px] w-8 bg-[#D4AF37]"></div>
+      </div>
+    </div>
+
+    {/* Heading and Button Row */}
+    <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left mb-12 space-y-6 md:space-y-0">
+      <h2 id="products" className="text-3xl md:text-4xl font-extrabold text-[#1A110B]">
+        Explore Our Latest products
+      </h2>
+      <button className="bg-[#D4AF37] text-black px-6 py-3 rounded-lg font-bold flex items-center text-sm shadow-md hover:bg-[#b8962f] transition-all shrink-0">
+        View All Products <ArrowRight className="ml-2 w-4 h-4" />
+      </button>
+    </div>
+
+    {/* Grid Layout */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {properties.map((p, i) => (
+        <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group border border-gray-100">
+          <div className="relative h-52 overflow-hidden">
+            <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div className="absolute top-3 left-3 bg-[#D4AF37] text-black text-[10px] font-bold px-3 py-1 rounded">
+              {p.status}
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A110B]">Explore Our Latest Listings</h2>
           </div>
-          <button className="bg-[#D4AF37] text-black px-6 py-3 rounded-lg font-bold flex items-center text-sm shadow-md hover:bg-[#b8962f] transition-all">
-            View All Properties <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {properties.map((p, i) => (
-            <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all group border border-gray-100">
-              <div className="relative h-52 overflow-hidden">
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute top-3 left-3 bg-[#D4AF37] text-black text-[10px] font-bold px-3 py-1 rounded">
-                  {p.status}
-                </div>
-              </div>
-              
-              <div className="p-5">
-                <h3 className="font-bold text-lg mb-1 group-hover:text-[#D4AF37] transition-colors">{p.title}</h3>
-                <div className="flex items-center text-gray-500 text-xs mb-3">
-                  <MapPin className="w-3 h-3 mr-1 text-[#D4AF37]" /> {p.loc}
-                </div>
-                <p className="text-[#D4AF37] font-bold text-lg mb-4">{p.price}</p>
-                
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  {p.tags.map((tag, idx) => (
-                    <div key={idx} className="flex items-center text-gray-500 text-[10px] font-medium">
-                      <span className="text-[#D4AF37] mr-1">{React.cloneElement(tag.icon, { size: 14 })}</span>
-                      {tag.val}
-                    </div>
-                  ))}
-                </div>
-              </div>
+          
+          <div className="p-5">
+            <h3 className="font-bold text-lg mb-1 group-hover:text-[#D4AF37] transition-colors">{p.title}</h3>
+            <div className="flex items-center text-gray-500 text-xs mb-3">
+              <MapPin className="w-3 h-3 mr-1 text-[#D4AF37]" /> {p.loc}
             </div>
-          ))}
+            <p className="text-[#D4AF37] font-bold text-lg mb-4">{p.price}</p>
+            
+            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              {p.tags.map((tag, idx) => (
+                <div key={idx} className="flex items-center text-gray-500 text-[10px] font-medium">
+                  <span className="text-[#D4AF37] mr-1">{React.cloneElement(tag.icon, { size: 14 })}</span>
+                  {tag.val}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
+<OurProjects/>
       {/* --- BOTTOM STACKED SECTIONS --- */}
 
       {/* 3. HOW IT WORKS SECTION */}
@@ -172,53 +179,7 @@ const PropertyLanding = () => {
       </section>
 
       {/* 4. READY TO FIND (CTA) SECTION */}
-      <section id="contact" className="relative overflow-hidden bg-gradient-to-r from-[#8B6E1A] via-[#D4AF37] to-[#E5C76B] py-10 px-6 lg:px-16">
-        {/* City Skyline Overlay */}
-        <div 
-          className="absolute right-0 bottom-0 w-full h-full opacity-15 pointer-events-none"
-          style={{ 
-            backgroundImage: 'url("https://www.transparenttextures.com/patterns/city-skyline.png")',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'bottom right'
-          }}
-        ></div>
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8 relative z-10">
-
-  {/* Brand & Text Group */}
-  <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-    {/* <div className="flex flex-col items-center">
-      <Sun className="w-12 h-12 text-black/90" />
-      <div className="text-black font-black tracking-tighter text-lg mt-[-8px]">SUNSHINE</div>
-      <div className="text-black/80 text-[8px] tracking-[0.3em] font-bold border-t border-black/30 pt-1 leading-none">REAL ESTATE</div>
-    </div> */}
-
-    <div className="flex flex-col justify-center">
-      <h2 className="text-[#1A110B] text-2xl md:text-3xl font-black mb-1">Ready to Find Your Dream Property?</h2>
-      <p className="text-[#1A110B]/80 text-base md:text-lg font-semibold">Let Sunshine Real Estate help you make the right move.</p>
-    </div>
-  </div>
-
-  {/* Buttons Group */}
-  <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
-    <button className="flex items-center justify-center bg-black text-white px-8 py-3.5 rounded-xl font-bold transition-all w-full sm:w-auto whitespace-nowrap shadow-xl group">
-      <Phone className="w-5 h-5 mr-3 text-[#D4AF37] group-hover:scale-110 transition-transform" />
-      Call Us Now
-    </button>
-
-    <button className="flex items-center justify-center border-2 border-black/30 hover:bg-black/10 text-black px-8 py-3.5 rounded-xl font-bold transition-all w-full sm:w-auto whitespace-nowrap">
-      <svg className="w-[22px] h-[22px] mr-3 flex-shrink-0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="16" cy="16" r="16" fill="#25D366"/>
-        <path d="M23.5 8.5A10.43 10.43 0 0016 5.5a10.5 10.5 0 00-9.1 15.7L5.5 26.5l5.5-1.4A10.5 10.5 0 0016 26.5a10.5 10.5 0 0010.5-10.5 10.43 10.43 0 00-3-7.5zm-7.5 16.2a8.7 8.7 0 01-4.4-1.2l-.3-.2-3.3.85.87-3.2-.2-.33A8.7 8.7 0 1124.7 16a8.72 8.72 0 01-8.7 8.72zm4.77-6.52c-.26-.13-1.55-.77-1.79-.85s-.42-.13-.59.13-.68.85-.84 1.03-.31.19-.57.06a7.15 7.15 0 01-2.1-1.3 7.9 7.9 0 01-1.46-1.81c-.15-.27 0-.41.12-.54s.26-.31.4-.47a1.8 1.8 0 00.26-.44.49.49 0 000-.47c-.06-.13-.59-1.42-.81-1.95s-.43-.44-.59-.45h-.5a1 1 0 00-.71.33 2.93 2.93 0 00-.91 2.18 5.1 5.1 0 001.07 2.7 11.66 11.66 0 004.47 3.94c.62.27 1.1.43 1.48.55a3.56 3.56 0 001.63.1 2.69 2.69 0 001.76-1.25 2.18 2.18 0 00.15-1.25c-.06-.11-.22-.17-.48-.3z" fill="white"/>
-      </svg>
-      Chat on WhatsApp
-    </button>
-  </div>
-
-</div>
-      </section>
-
+      
     </main>
   );
 };
