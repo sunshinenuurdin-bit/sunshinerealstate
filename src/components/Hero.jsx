@@ -46,10 +46,10 @@ const Hero = () => {
               </button>
             </a>
 
-            <button className="flex items-center justify-center border border-white/40 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-medium transition-all w-full sm:w-auto">
+            <a  href="https://wa.me/+254718954599" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center border border-white/40 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-medium transition-all w-full sm:w-auto">
               <WhatsAppIcon />
               Chat on WhatsApp
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-8 pb-12">
